@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 from datetime import datetime
 from pathlib import Path
 
@@ -19,7 +20,7 @@ def update_yaml(app_id, version):
 
 
 def update_xml(app_id, version):
-  xml_filename = f"{app_id}.appdata.xml"
+  xml_filename = f"{app_id}.metainfo.xml"
   parts = version.split(".")
   public_version = f"{parts[0]}.{parts[1]}.{parts[2]}"
   parser = etree.XMLParser(remove_comments=False)
