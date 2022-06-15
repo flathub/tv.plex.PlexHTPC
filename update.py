@@ -6,7 +6,7 @@ import requests
 from lxml import etree
 
 
-TARBALL_URL = "https://artifacts.plex.tv/plex-htpc-experimental/{version}/linux/PlexHTPC-{version}-linux-x86_64.tar.bz2"
+TARBALL_URL = "https://artifacts.plex.tv/plex-htpc-stable/{version}/linux/PlexHTPC-{version}-linux-x86_64.tar.bz2"
 
 
 def update_yaml(app_id, version):
