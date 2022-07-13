@@ -4,7 +4,7 @@
   <provides><id>tv.plex.PlexHTPC.desktop</id></provides>
   <launchable type="desktop-id">tv.plex.PlexHTPC.desktop</launchable>
   <name>Plex HTPC</name>
-  <developer_name>Plex HTPC</developer_name>
+  <developer_name>Plex</developer_name>
   <summary>Plex HTPC client for the big screen</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.plex.tv/en-gb/about/privacy-legal/plex-terms-of-service/</project_license>
