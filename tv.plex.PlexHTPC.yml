@@ -115,5 +115,10 @@ modules:
       - mv /app/Plex.sh /app/bin/Plex
     sources:
       - type: archive
-        url: https://artifacts.plex.tv/plex-htpc-stable/1.47.1.3971-8b24dbb6/linux/PlexHTPC-1.47.1.3971-8b24dbb6-linux-x86_64.tar.bz2
-        sha256: de5ae1bf3655fec1ca44c7db08350c446619b45fff496f5b4f65820f7308ca6d
+        url: https://artifacts.plex.tv/plex-htpc-stable/1.48.0.3976-eaef7d82/linux/PlexHTPC-1.48.0.3976-eaef7d82-linux-x86_64.tar.bz2
+        sha256: {
+  "errors" : [ {
+    "status" : 404,
+    "message" : "File not found."
+  } ]
+}
