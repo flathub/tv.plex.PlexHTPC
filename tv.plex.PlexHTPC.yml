@@ -117,6 +117,15 @@ modules:
       - sed -i 's/"\$BASE_DIR"\/bin\/Plex/"\$BASE_DIR"\/bin\/plex-bin/g' /app/Plex.sh
       - mv /app/bin/Plex /app/bin/plex-bin
       - mv /app/Plex.sh /app/bin/Plex
+    cleanup:
+      - /lib/dri
+      - /lib/libEGL.so*
+      - /lib/libdrm.so*
+      - /lib/libdrm_*.so*
+      - /lib/libpciaccess.so*
+      - /lib/libswresample.so*
+      - /lib/libva.so*
+      - /lib/libva-*.so*
     sources:
       - type: archive
         url: https://artifacts.plex.tv/plex-htpc-stable/1.53.0.4063-cdc1f574/linux/PlexHTPC-1.53.0.4063-cdc1f574-linux-x86_64.tar.bz2
