@@ -20,6 +20,10 @@ cleanup:
   - /bin/rdjpgcom
   - /bin/tjbench
   - /bin/wrjpgcom
+  - /lib/cmake
+  - /share/doc
+  - /share/man
+  - /lib/pkgconfig
   - "*.a"
   - "*.la"
 modules:
