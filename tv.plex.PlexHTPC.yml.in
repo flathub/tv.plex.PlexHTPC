@@ -1,6 +1,6 @@
 app-id: tv.plex.PlexHTPC
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: Plex
 finish-args:
@@ -20,6 +20,10 @@ cleanup:
   - /bin/rdjpgcom
   - /bin/tjbench
   - /bin/wrjpgcom
+  - /lib/cmake
+  - /share/doc
+  - /share/man
+  - /lib/pkgconfig
   - "*.a"
   - "*.la"
 modules:
@@ -89,8 +93,8 @@ modules:
       - --disable-static
     sources:
       - type: archive
-        url: https://zlib.net/zlib-1.2.13.tar.gz
-        sha256: b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30
+        url: https://zlib.net/zlib-1.3.tar.gz
+        sha256: ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e
         x-checker-data:
           type: anitya
           project-id: 5303
@@ -113,6 +117,15 @@ modules:
       - sed -i 's/"\$BASE_DIR"\/bin\/Plex/"\$BASE_DIR"\/bin\/plex-bin/g' /app/Plex.sh
       - mv /app/bin/Plex /app/bin/plex-bin
       - mv /app/Plex.sh /app/bin/Plex
+    cleanup:
+      - /lib/dri
+      - /lib/libEGL.so*
+      - /lib/libdrm.so*
+      - /lib/libdrm_*.so*
+      - /lib/libpciaccess.so*
+      - /lib/libswresample.so*
+      - /lib/libva.so*
+      - /lib/libva-*.so*
     sources:
       - type: archive
         url: https://artifacts.plex.tv/plex-htpc-stable/@FULL_VERSION@/linux/PlexHTPC-@FULL_VERSION@-linux-x86_64.tar.bz2
