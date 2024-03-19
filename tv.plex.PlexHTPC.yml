@@ -128,5 +128,5 @@ modules:
       - /lib/libva-*.so*
     sources:
       - type: archive
-        url: https://artifacts.plex.tv/plex-htpc-stable/1.57.1.100-26625b61/linux/PlexHTPC-1.57.1.100-26625b61-linux-x86_64.tar.bz2
-        sha256: 1d49d745c936058115ca5f465f78522963d2734480becb309bd37b2abef9cf92
+        url: https://artifacts.plex.tv/plex-htpc-stable/1.58.0.106-d213ced1/linux/PlexHTPC-1.58.0.106-d213ced1-linux-x86_64.tar.bz2
+        sha256: b378d4908702d20366d927698a9d990d56d16deb70046f9c48eb3536dc9f27fa
