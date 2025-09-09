@@ -1,7 +1,12 @@
 app-id: tv.plex.PlexHTPC
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    version: '25.08'
+    directory: lib/ffmpeg
+    add-ld-path: .
 command: Plex
 finish-args:
   - --socket=x11
@@ -50,13 +55,14 @@ modules:
       - -DCMAKE_INSTALL_LIBDIR=/app/lib # uses lib64 by default
     sources: &libjpeg_sources
       - type: archive
-        url: https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/2.1.3.tar.gz
-        sha256: dbda0c685942aa3ea908496592491e5ec8160d2cf1ec9d5fd5470e50768e7859
+        url: https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.1.2.tar.gz
+        sha256: 560f6338b547544c4f9721b18d8b87685d433ec78b3c644c70d77adad22c55e6
 
   - name: libevent
     buildsystem: cmake-ninja
     config-opts:
       - -DEVENT__LIBRARY_TYPE=SHARED
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/libevent/libevent/
@@ -73,8 +79,8 @@ modules:
     cleanup: [/share, /bin]
     sources:
       - type: archive
-        url: https://github.com/webmproject/libwebp/archive/refs/heads/0.5.1.zip
-        sha256: fdef2c0404b5868888008996438525d44fdb049327f92576579a32df4b30ea27
+        url: https://github.com/webmproject/libwebp/archive/refs/heads/1.6.0.zip
+        sha256: 4052f92fd7f2801eed505e62d7db5bef618246d1f50c8ddae0bfea443c0613c0
 
   - name: libsnappy
     buildsystem: cmake-ninja
@@ -85,7 +91,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/google/snappy
-        tag: 1.1.7
+        tag: 1.2.2
 
   - name: minizip
     subdir: contrib/minizip
@@ -93,8 +99,8 @@ modules:
       - --disable-static
     sources:
       - type: archive
-        url: https://zlib.net/zlib-1.3.tar.gz
-        sha256: ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e
+        url: https://zlib.net/fossils/zlib-1.3.1.tar.gz
+        sha256: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
         x-checker-data:
           type: anitya
           project-id: 5303
